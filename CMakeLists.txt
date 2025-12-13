@@ -23,4 +23,7 @@ add_executable(chess main.cpp
         piece/Queen.cpp
         piece/header/Queen.h
         piece/King.cpp
-        piece/header/King.h)
+        piece/header/King.h
+        render/header/BoardRenderer.h
+        render/ConsoleBoardRenderer.cpp
+        render/header/ConsoleBoardRenderer.h)

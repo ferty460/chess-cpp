@@ -5,6 +5,11 @@
 
 // ферзь
 class Queen : public Piece {
+
+public:
+    Queen(Color color, Coordinates coord);
+    std::string getUnicodeSprite() override;
+
 };
 
 

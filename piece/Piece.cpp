@@ -8,7 +8,7 @@ Color Piece::getColor() {
     return m_color;
 }
 
-Coordinates Piece::getCoordinates() {
+Coordinates &Piece::getCoordinates() {
     return m_coordinates;
 }
 

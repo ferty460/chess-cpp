@@ -12,5 +12,9 @@ inline std::vector<File> getAllFiles() {
              File::E, File::F, File::G, File::H };
 }
 
+inline char toChar(File file) {
+    return 'A' + static_cast<int>(file);
+}
+
 
 #endif //CHESS_HORIZONTAL_H

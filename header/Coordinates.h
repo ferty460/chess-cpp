@@ -8,6 +8,9 @@ class Coordinates {
 public:
     Coordinates(File file, int rank);
 
+    File getFile();
+    int getRank();
+
     bool operator<(const Coordinates &coordinates) const {
         if (file != coordinates.file) {
             return file < coordinates.file;

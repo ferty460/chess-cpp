@@ -6,7 +6,9 @@
 // конь
 class Knight : public Piece {
 
-
+public:
+    Knight(Color color, Coordinates coord);
+    std::string getUnicodeSprite() override;
 
 };
 

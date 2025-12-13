@@ -5,6 +5,11 @@
 
 // ладья
 class Rook : public Piece {
+
+public:
+    Rook(Color color, Coordinates coord);
+    std::string getUnicodeSprite() override;
+
 };
 
 
