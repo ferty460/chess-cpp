@@ -24,6 +24,7 @@ add_executable(chess main.cpp
         piece/header/Queen.h
         piece/King.cpp
         piece/header/King.h
-        render/header/BoardRenderer.h
         render/ConsoleBoardRenderer.cpp
-        render/header/ConsoleBoardRenderer.h)
+        render/header/ConsoleBoardRenderer.h
+        CoordinatesShift.cpp
+        header/CoordinatesShift.h)

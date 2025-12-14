@@ -1,10 +1,15 @@
 #ifndef CHESS_PIECE_H
 #define CHESS_PIECE_H
+#include <set>
 #include <string>
+#include <vector>
 
 #include "../../header/Color.h"
 #include "../../header/Coordinates.h"
+#include "../../header/CoordinatesShift.h"
 
+
+class Board;
 
 class Piece {
 
@@ -13,10 +18,14 @@ class Piece {
 
 public:
     virtual ~Piece() = default;
-
     Piece(Color color, Coordinates coordinates);
 
     virtual std::string getUnicodeSprite() = 0;
+    virtual std::vector<CoordinatesShift> getMoves() = 0;
+
+    bool isSquareAvailableToMove(Coordinates coordinates, Board &board);
+    std::set<Coordinates> getAvailableCoordsToMove(Board &board);
+
     Color getColor();
     Coordinates &getCoordinates();
     void setColor(Color color);

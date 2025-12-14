@@ -1,6 +1,8 @@
+#include <set>
 #include <windows.h>
 
 #include "header/Board.h"
+#include "piece/header/Piece.h"
 #include "render/header/ConsoleBoardRenderer.h"
 
 void enableAnsiColorsAndUtf8() {
@@ -22,5 +24,11 @@ int main() {
 
     ConsoleBoardRenderer renderer;
     renderer.render(board);
+
+    Coordinates knightCoords(File::G, 8);
+    Piece *piece = board.getPiece(knightCoords);
+    std::set<Coordinates> coords = piece->getAvailableCoordsToMove(board);
+
+    int a = 1;
 }
 

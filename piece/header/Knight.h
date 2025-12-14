@@ -9,6 +9,7 @@ class Knight : public Piece {
 public:
     Knight(Color color, Coordinates coord);
     std::string getUnicodeSprite() override;
+    std::vector<CoordinatesShift> getMoves() override;
 
 };
 

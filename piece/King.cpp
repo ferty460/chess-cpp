@@ -5,3 +5,7 @@ King::King(Color color, Coordinates coord) : Piece(color, coord) {}
 std::string King::getUnicodeSprite() {
     return "♚";
 }
+
+std::vector<CoordinatesShift> King::getMoves() {
+    return {};
+}

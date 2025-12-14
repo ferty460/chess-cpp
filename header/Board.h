@@ -4,8 +4,9 @@
 #include <memory>
 
 #include "Coordinates.h"
-#include "../piece/header/Piece.h"
 
+
+class Piece;
 
 class Board {
 
@@ -14,24 +15,18 @@ class Board {
 
     std::map<Coordinates, std::unique_ptr<Piece>> pieces;
 
+    void setUpPawns();
+    void setUpRooks();
+    void setUpKnights();
+    void setUpBishops();
+    void setUpQueens();
+    void setUpKings();
+
 public:
     Piece* getPiece(Coordinates &coordinates);
     void setPiece(Coordinates &coordinates, std::unique_ptr<Piece> piece);
     bool isSquareEmpty(Coordinates &coordinates);
     static bool isSquareDark(Coordinates &coordinates);
-
-    void setUpPawns();
-
-    void setUpRooks();
-
-    void setUpKnights();
-
-    void setUpBishops();
-
-    void setUpQueens();
-
-    void setUpKings();
-
     void setUpDefaultPiecesPositions();
 
 };

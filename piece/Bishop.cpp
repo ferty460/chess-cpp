@@ -6,3 +6,7 @@ std::string Bishop::getUnicodeSprite() {
     return "♝";
 }
 
+std::vector<CoordinatesShift> Bishop::getMoves() {
+    return {};
+}
+

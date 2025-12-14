@@ -1,10 +1,11 @@
 #include "header/ConsoleBoardRenderer.h"
+#include "../piece/header/Piece.h"
 
 #include <iostream>
 
 void ConsoleBoardRenderer::render(Board &board) {
     for (int rank = 8; rank >= 1; rank--) {
-        std::string line = "";
+        std::string line;
 
         for (auto file : getAllFiles()) {
             Coordinates coords{ file, rank };

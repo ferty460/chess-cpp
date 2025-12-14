@@ -9,6 +9,7 @@ class King : public Piece {
 public:
     King(Color color, Coordinates coord);
     std::string getUnicodeSprite() override;
+    std::vector<CoordinatesShift> getMoves() override;
 
 };
 

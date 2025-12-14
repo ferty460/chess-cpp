@@ -1,12 +1,16 @@
 #ifndef CHESS_COORDINATES_H
 #define CHESS_COORDINATES_H
 #include "File.h"
+#include "CoordinatesShift.h"
 
 
 class Coordinates {
 
 public:
     Coordinates(File file, int rank);
+
+    Coordinates shift(CoordinatesShift shift);
+    bool isValidToShift(CoordinatesShift shift);
 
     File getFile();
     int getRank();

@@ -1,5 +1,6 @@
 #include "header/Board.h"
 #include "header/File.h"
+#include "piece/header/Piece.h"
 #include "piece/header/Bishop.h"
 #include "piece/header/King.h"
 #include "piece/header/Knight.h"

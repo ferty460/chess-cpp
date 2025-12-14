@@ -9,6 +9,7 @@ class Pawn : public Piece {
 public:
     Pawn(Color color, Coordinates coord);
     std::string getUnicodeSprite() override;
+    std::vector<CoordinatesShift> getMoves() override;
 
 };
 
