@@ -18,6 +18,23 @@ void Board::setPiece(Coordinates &coordinates, std::unique_ptr<Piece> piece) {
     pieces.insert_or_assign(coordinates, std::move(piece));
 }
 
+void Board::removePiece(Coordinates &coordinates) {
+    pieces.erase(coordinates);
+}
+
+void Board::movePiece(Coordinates &from, Coordinates &to) {
+    auto it = pieces.find(from);
+    if (it == pieces.end()) {
+        return;
+    }
+
+    std::unique_ptr<Piece> piece = std::move(it->second);
+
+    pieces.erase(it);
+    piece->setCoordinates(to);
+    pieces.insert_or_assign(to, std::move(piece));
+}
+
 bool Board::isSquareEmpty(Coordinates &coordinates) {
     return !pieces.contains(coordinates);
 }

@@ -16,5 +16,9 @@ inline char toChar(File file) {
     return 'A' + static_cast<int>(file);
 }
 
+inline File fromChar(char c) {
+    return static_cast<File>(c - 'A');
+}
+
 
 #endif //CHESS_HORIZONTAL_H

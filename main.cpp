@@ -1,6 +1,8 @@
 #include <set>
 #include <windows.h>
 
+#include "header/Game.h"
+#include "header/InputCoordinates.h"
 #include "header/Board.h"
 #include "piece/header/Piece.h"
 #include "render/header/ConsoleBoardRenderer.h"
@@ -22,13 +24,7 @@ int main() {
     Board board = Board();
     board.setUpDefaultPiecesPositions();
 
-    ConsoleBoardRenderer renderer;
-    renderer.render(board);
-
-    Coordinates knightCoords(File::G, 8);
-    Piece *piece = board.getPiece(knightCoords);
-    std::set<Coordinates> coords = piece->getAvailableCoordsToMove(board);
-
-    int a = 1;
+    Game game(board);
+    game.loop();
 }
 

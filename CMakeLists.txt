@@ -27,4 +27,8 @@ add_executable(chess main.cpp
         render/ConsoleBoardRenderer.cpp
         render/header/ConsoleBoardRenderer.h
         CoordinatesShift.cpp
-        header/CoordinatesShift.h)
+        header/CoordinatesShift.h
+        Game.cpp
+        header/Game.h
+        InputCoordinates.cpp
+        header/InputCoordinates.h)

@@ -25,6 +25,8 @@ class Board {
 public:
     Piece* getPiece(Coordinates &coordinates);
     void setPiece(Coordinates &coordinates, std::unique_ptr<Piece> piece);
+    void removePiece(Coordinates &coordinates);
+    void movePiece(Coordinates &from, Coordinates &to);
     bool isSquareEmpty(Coordinates &coordinates);
     static bool isSquareDark(Coordinates &coordinates);
     void setUpDefaultPiecesPositions();
