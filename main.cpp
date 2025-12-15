@@ -1,11 +1,9 @@
 #include <set>
 #include <windows.h>
 
+#include "BoardFactory.h"
 #include "header/Game.h"
-#include "header/InputCoordinates.h"
 #include "header/Board.h"
-#include "piece/header/Piece.h"
-#include "render/header/ConsoleBoardRenderer.h"
 
 void enableAnsiColorsAndUtf8() {
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -21,10 +19,12 @@ void enableAnsiColorsAndUtf8() {
 int main() {
     enableAnsiColorsAndUtf8();
 
-    Board board = Board();
-    board.setUpDefaultPiecesPositions();
+    Board board = BoardFactory().fromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    ConsoleBoardRenderer renderer = ConsoleBoardRenderer();
+    renderer.render(board);
+    // board.setUpDefaultPiecesPositions();
 
-    Game game(board);
-    game.loop();
+    // Game game(board);
+    // game.loop();
 }
 

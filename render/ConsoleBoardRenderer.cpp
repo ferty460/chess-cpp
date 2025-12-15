@@ -24,6 +24,16 @@ void ConsoleBoardRenderer::render(Board &board) {
 
 std::string ConsoleBoardRenderer::getSpriteForEmptySquare(Coordinates coords) {
     return colorizeSprite("   ", Color::WHITE, Board::isSquareDark(coords));
+
+    // std::string result = " ♞ ";
+    //
+    // if (Board::isSquareDark(coords)) {
+    //     result = ANSI_BLACK_SQUARE_BG + result;
+    // } else {
+    //     result = ANSI_WHITE_SQUARE_BG + result;
+    // }
+    //
+    // return result;
 }
 
 std::string ConsoleBoardRenderer::getPieceSprite(Piece &piece) {

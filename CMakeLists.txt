@@ -31,4 +31,8 @@ add_executable(chess main.cpp
         Game.cpp
         header/Game.h
         InputCoordinates.cpp
-        header/InputCoordinates.h)
+        header/InputCoordinates.h
+        BoardFactory.cpp
+        BoardFactory.h
+        PieceFactory.cpp
+        PieceFactory.h)
