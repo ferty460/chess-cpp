@@ -3,7 +3,7 @@
 #include "../board/Board.h"
 #include "../utils/BoardUtils.h"
 
-Bishop::Bishop(Color color, Coordinates coord) : Piece(color, coord) {}
+Bishop::Bishop(Color color, Coordinates coord) : LongRangePiece(color, coord) {}
 
 std::string Bishop::getUnicodeSprite() {
     return "♝";
@@ -29,23 +29,5 @@ std::vector<CoordinatesShift> Bishop::getMoves() {
     }
 
     return result;
-}
-
-bool Bishop::isSquareAvailableToMove(Coordinates coord, Board &board) {
-    bool result = Piece::isSquareAvailableToMove(coord, board);
-
-    if (result) {
-        std::vector<Coordinates> coordsBetween = BoardUtils::getDiagonalsCoordinatesBetween(m_coordinates, coord);
-
-        for (Coordinates coord : coordsBetween) {
-            if (!board.isSquareEmpty(coord)) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    return false;
 }
 

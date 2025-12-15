@@ -37,4 +37,6 @@ add_executable(chess main.cpp
         piece/PieceFactory.cpp
         piece/header/PieceFactory.h
         utils/BoardUtils.cpp
-        utils/BoardUtils.h)
+        utils/BoardUtils.h
+        piece/LongRangePiece.cpp
+        piece/header/LongRangePiece.h)
