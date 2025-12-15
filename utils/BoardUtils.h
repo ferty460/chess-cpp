@@ -9,6 +9,8 @@ class BoardUtils {
 
 public:
     static std::vector<Coordinates> getDiagonalsCoordinatesBetween(Coordinates from, Coordinates to);
+    static std::vector<Coordinates> getVerticalCoordinatesBetween(Coordinates from, Coordinates to);
+    static std::vector<Coordinates> getHorizontalCoordinatesBetween(Coordinates from, Coordinates to);
 
 };
 

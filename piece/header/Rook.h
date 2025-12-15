@@ -10,6 +10,7 @@ public:
     Rook(Color color, Coordinates coord);
     std::string getUnicodeSprite() override;
     std::vector<CoordinatesShift> getMoves() override;
+    bool isSquareAvailableToMove(Coordinates coordinates, Board &board) override;
 
 };
 

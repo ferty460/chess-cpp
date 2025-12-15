@@ -23,8 +23,8 @@ public:
 
     virtual std::string getUnicodeSprite() = 0;
     virtual std::vector<CoordinatesShift> getMoves() = 0;
-
     virtual bool isSquareAvailableToMove(Coordinates coordinates, Board &board);
+
     std::set<Coordinates> getAvailableCoordsToMove(Board &board);
 
     Color getColor();

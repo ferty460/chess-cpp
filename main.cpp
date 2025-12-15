@@ -20,14 +20,14 @@ void enableAnsiColorsAndUtf8() {
 int main() {
     enableAnsiColorsAndUtf8();
 
-    Board board = BoardFactory().fromFen("3k4/8/5n2/2N5/3B4/8/8/3K4 w KQkq - 0 11");
+    Board board = BoardFactory().fromFen("3k4/8/p7/8/R7/8/P7/3K4 w - - 0 1");
     // ConsoleBoardRenderer renderer = ConsoleBoardRenderer();
     // renderer.render(board);
 
     Game game(board);
     game.loop();
 
-    std::vector<Coordinates> coords = BoardUtils::getDiagonalsCoordinatesBetween(Coordinates(File::D, 4), Coordinates(File::A, 7));
+    std::vector<Coordinates> coords = BoardUtils::getHorizontalCoordinatesBetween(Coordinates(File::D, 4), Coordinates(File::H, 2));
 
     int a = 1;
 }
