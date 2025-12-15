@@ -2,7 +2,7 @@
 #define CHESS_PIECEFACTORY_H
 #include <memory>
 
-#include "piece/header/Piece.h"
+#include "Piece.h"
 
 
 class PieceFactory {

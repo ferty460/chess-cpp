@@ -2,8 +2,8 @@
 #define CHESS_CONSOLEBOARDRENDERER_H
 #include <string>
 
-#include "../../header/Board.h"
-#include "../../header/Color.h"
+#include "../board/Board.h"
+#include "../header/Color.h"
 
 class ConsoleBoardRenderer {
 
@@ -12,6 +12,7 @@ class ConsoleBoardRenderer {
     const std::string ANSI_BLACK_PIECE_COLOR = "\u001B[30m";
     const std::string ANSI_WHITE_SQUARE_BG = "\u001B[47m";
     const std::string ANSI_BLACK_SQUARE_BG = "\u001B[0;100m";
+    const std::string ANSI_HIGHLIGHTED_BG = "\u001B[45m";
 
     std::string getSpriteForEmptySquare(Coordinates coords);
     std::string getPieceSprite(Piece &piece);

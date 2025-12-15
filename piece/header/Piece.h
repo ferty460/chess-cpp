@@ -13,6 +13,7 @@ class Board;
 
 class Piece {
 
+protected:
     Color m_color;
     Coordinates m_coordinates;
 
@@ -23,7 +24,7 @@ public:
     virtual std::string getUnicodeSprite() = 0;
     virtual std::vector<CoordinatesShift> getMoves() = 0;
 
-    bool isSquareAvailableToMove(Coordinates coordinates, Board &board);
+    virtual bool isSquareAvailableToMove(Coordinates coordinates, Board &board);
     std::set<Coordinates> getAvailableCoordsToMove(Board &board);
 
     Color getColor();

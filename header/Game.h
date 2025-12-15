@@ -1,7 +1,7 @@
 #ifndef CHESS_GAME_H
 #define CHESS_GAME_H
-#include "Board.h"
-#include "../render/header/ConsoleBoardRenderer.h"
+#include "../board/Board.h"
+#include "../render/ConsoleBoardRenderer.h"
 
 
 class Game {

@@ -3,7 +3,7 @@
 
 #include <set>
 
-#include "Board.h"
+#include "../board/Board.h"
 #include "Color.h"
 #include "Coordinates.h"
 

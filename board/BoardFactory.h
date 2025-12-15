@@ -1,7 +1,7 @@
 #ifndef CHESS_BOARDFACTORY_H
 #define CHESS_BOARDFACTORY_H
-#include "PieceFactory.h"
-#include "header/Board.h"
+#include "../piece/header/PieceFactory.h"
+#include "Board.h"
 
 
 class BoardFactory {

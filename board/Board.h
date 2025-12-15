@@ -3,7 +3,7 @@
 #include <map>
 #include <memory>
 
-#include "Coordinates.h"
+#include "../header/Coordinates.h"
 
 
 class Piece;

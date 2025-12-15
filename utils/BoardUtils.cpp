@@ -1,0 +1,22 @@
+#include "BoardUtils.h"
+
+std::vector<Coordinates> BoardUtils::getDiagonalsCoordinatesBetween(Coordinates from, Coordinates to) {
+    std::vector<Coordinates> result;
+
+    int fileShift = static_cast<int>(from.getFile()) < static_cast<int>(to.getFile()) ? 1 : -1;
+    int rankShift = from.getRank() < to.getRank() ? 1 : -1;
+
+    for (
+        int fileIndex = static_cast<int>(from.getFile()) + fileShift,
+        rank = from.getRank() + rankShift;
+
+        fileIndex != static_cast<int>(to.getFile()) && rank != to.getRank();
+
+        fileIndex += fileShift,
+        rank += rankShift
+    ) {
+        result.push_back(Coordinates(getAllFiles()[fileIndex], rank));
+    }
+
+    return result;
+}

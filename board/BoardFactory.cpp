@@ -1,6 +1,6 @@
 #include "BoardFactory.h"
 
-#include "piece/header/Pawn.h"
+#include "../piece/header/Pawn.h"
 
 std::vector<std::string> BoardFactory::split(std::string &str, char delim) {
     std::vector<std::string> tokens;

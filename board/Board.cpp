@@ -1,12 +1,12 @@
-#include "header/Board.h"
-#include "header/File.h"
-#include "piece/header/Piece.h"
-#include "piece/header/Bishop.h"
-#include "piece/header/King.h"
-#include "piece/header/Knight.h"
-#include "piece/header/Pawn.h"
-#include "piece/header/Queen.h"
-#include "piece/header/Rook.h"
+#include "Board.h"
+#include "../header/File.h"
+#include "../piece/header/Piece.h"
+#include "../piece/header/Bishop.h"
+#include "../piece/header/King.h"
+#include "../piece/header/Knight.h"
+#include "../piece/header/Pawn.h"
+#include "../piece/header/Queen.h"
+#include "../piece/header/Rook.h"
 
 Piece* Board::getPiece(Coordinates &coordinates) {
     auto it = pieces.find(coordinates);

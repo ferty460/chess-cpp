@@ -10,8 +10,8 @@ add_executable(chess main.cpp
         Coordinates.cpp
         header/Coordinates.h
         header/File.h
-        Board.cpp
-        header/Board.h
+        board/Board.cpp
+        board/Board.h
         piece/Knight.cpp
         piece/header/Knight.h
         piece/Pawn.cpp
@@ -25,14 +25,16 @@ add_executable(chess main.cpp
         piece/King.cpp
         piece/header/King.h
         render/ConsoleBoardRenderer.cpp
-        render/header/ConsoleBoardRenderer.h
+        render/ConsoleBoardRenderer.h
         CoordinatesShift.cpp
         header/CoordinatesShift.h
         Game.cpp
         header/Game.h
         InputCoordinates.cpp
         header/InputCoordinates.h
-        BoardFactory.cpp
-        BoardFactory.h
-        PieceFactory.cpp
-        PieceFactory.h)
+        board/BoardFactory.cpp
+        board/BoardFactory.h
+        piece/PieceFactory.cpp
+        piece/header/PieceFactory.h
+        utils/BoardUtils.cpp
+        utils/BoardUtils.h)

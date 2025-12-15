@@ -1,13 +1,13 @@
-#include "PieceFactory.h"
+#include "header/PieceFactory.h"
 
 #include <memory>
 
-#include "piece/header/Bishop.h"
-#include "piece/header/King.h"
-#include "piece/header/Knight.h"
-#include "piece/header/Pawn.h"
-#include "piece/header/Queen.h"
-#include "piece/header/Rook.h"
+#include "header/Bishop.h"
+#include "header/King.h"
+#include "header/Knight.h"
+#include "header/Pawn.h"
+#include "header/Queen.h"
+#include "header/Rook.h"
 
 std::unique_ptr<Piece> PieceFactory::fromFenChar(char fenChar, Coordinates coordinates) {
     switch (fenChar) {

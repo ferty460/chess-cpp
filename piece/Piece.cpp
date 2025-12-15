@@ -1,5 +1,5 @@
 #include "header/Piece.h"
-#include "../header/Board.h"
+#include "../board/Board.h"
 
 Piece::Piece(Color color, Coordinates coordinates)
     : m_color(color), m_coordinates(coordinates) {

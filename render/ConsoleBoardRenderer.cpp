@@ -1,4 +1,4 @@
-#include "header/ConsoleBoardRenderer.h"
+#include "ConsoleBoardRenderer.h"
 #include "../piece/header/Piece.h"
 
 #include <iostream>

@@ -1,9 +1,10 @@
-#include <set>
+#include <iostream>
 #include <windows.h>
 
-#include "BoardFactory.h"
 #include "header/Game.h"
-#include "header/Board.h"
+#include "board/Board.h"
+#include "board/BoardFactory.h"
+#include "utils/BoardUtils.h"
 
 void enableAnsiColorsAndUtf8() {
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -19,12 +20,15 @@ void enableAnsiColorsAndUtf8() {
 int main() {
     enableAnsiColorsAndUtf8();
 
-    Board board = BoardFactory().fromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-    ConsoleBoardRenderer renderer = ConsoleBoardRenderer();
-    renderer.render(board);
-    // board.setUpDefaultPiecesPositions();
+    Board board = BoardFactory().fromFen("3k4/8/5n2/2N5/3B4/8/8/3K4 w KQkq - 0 11");
+    // ConsoleBoardRenderer renderer = ConsoleBoardRenderer();
+    // renderer.render(board);
 
-    // Game game(board);
-    // game.loop();
+    Game game(board);
+    game.loop();
+
+    std::vector<Coordinates> coords = BoardUtils::getDiagonalsCoordinatesBetween(Coordinates(File::D, 4), Coordinates(File::A, 7));
+
+    int a = 1;
 }
 
