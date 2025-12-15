@@ -1,11 +1,12 @@
 #ifndef CHESS_ROOK_H
 #define CHESS_ROOK_H
+#include "IRook.h"
 #include "LongRangePiece.h"
 #include "Piece.h"
 
 
 // ладья
-class Rook : public LongRangePiece {
+class Rook : public LongRangePiece, IRook {
 
 public:
     Rook(Color color, Coordinates coord);

@@ -39,4 +39,8 @@ add_executable(chess main.cpp
         utils/BoardUtils.cpp
         utils/BoardUtils.h
         piece/LongRangePiece.cpp
-        piece/header/LongRangePiece.h)
+        piece/header/LongRangePiece.h
+        piece/header/IBishop.h
+        piece/IBishop.cpp
+        piece/Irook.cpp
+        piece/header/IRook.h)

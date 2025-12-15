@@ -1,10 +1,13 @@
 #ifndef CHESS_QUEEN_H
 #define CHESS_QUEEN_H
+#include "IBishop.h"
+#include "IRook.h"
+#include "LongRangePiece.h"
 #include "Piece.h"
 
 
 // ферзь
-class Queen : public Piece {
+class Queen : public LongRangePiece, IBishop, IRook {
 
 public:
     Queen(Color color, Coordinates coord);

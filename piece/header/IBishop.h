@@ -1,0 +1,14 @@
+#ifndef CHESS_IBISHOP_H
+#define CHESS_IBISHOP_H
+#include <vector>
+
+#include "../../header/CoordinatesShift.h"
+
+class IBishop {
+
+public:
+    virtual std::vector<CoordinatesShift> getBishopMoves();
+
+};
+
+#endif //CHESS_IBISHOP_H

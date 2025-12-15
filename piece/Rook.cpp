@@ -10,23 +10,5 @@ std::string Rook::getUnicodeSprite() {
 }
 
 std::vector<CoordinatesShift> Rook::getMoves() {
-    std::vector<CoordinatesShift> result;
-
-    for (int i = -7; i <= 7; i++) {
-        if (i == 0) {
-            continue;
-        }
-
-        result.push_back(CoordinatesShift(i, 0));
-    }
-
-    for (int i = -7; i <= 7; i++) {
-        if (i == 0) {
-            continue;
-        }
-
-        result.push_back(CoordinatesShift(0, i));
-    }
-
-    return result;
+    return getRookMoves();
 }
