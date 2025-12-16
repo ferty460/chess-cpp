@@ -20,7 +20,11 @@ void enableAnsiColorsAndUtf8() {
 int main() {
     enableAnsiColorsAndUtf8();
 
-    Board board = BoardFactory().fromFen("3k4/6r1/8/1P2Q3/2B5/6P1/2R1r3/3K4 w KQkq - 0 1");
+    Board board = BoardFactory().fromFen(
+     // "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
+        "4k3/6p1/5p2/4N3/2n1B1b1/3P2P1/2P5/4K3 b KQkq - 0 1"
+    );
+
     // ConsoleBoardRenderer renderer = ConsoleBoardRenderer();
     // renderer.render(board);
 
