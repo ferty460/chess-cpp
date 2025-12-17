@@ -1,7 +1,7 @@
 #ifndef CHESS_GAME_H
 #define CHESS_GAME_H
-#include "GameState.h"
-#include "GameStateChecker.h"
+#include "../checker/GameState.h"
+#include "../checker/GameStateChecker.h"
 #include "../board/Board.h"
 #include "../render/ConsoleBoardRenderer.h"
 

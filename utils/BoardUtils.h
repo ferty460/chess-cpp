@@ -2,7 +2,7 @@
 #define CHESS_BOARDUTILS_H
 #include <vector>
 
-#include "../header/Coordinates.h"
+#include "../core/Coordinates.h"
 
 
 class BoardUtils {

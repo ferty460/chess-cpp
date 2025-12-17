@@ -1,7 +1,3 @@
-//
-// Created by admin on 15.12.2025.
-//
-
 #include "header/IRook.h"
 
 std::vector<CoordinatesShift> IRook::getRookMoves() {

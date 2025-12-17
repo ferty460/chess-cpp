@@ -2,7 +2,7 @@
 
 #include <set>
 
-#include "piece/header/Piece.h"
+#include "../piece/header/Piece.h"
 
 GameState StalemateGameChecker::check(Board &board, Color color) {
     std::vector<Piece*> pieces = board.getPiecesByColor(color);

@@ -1,13 +1,15 @@
-#include "header/Game.h"
+#include "Game.h"
 
 #include <iostream>
 
-#include "StalemateGameChecker.h"
-#include "header/GameState.h"
-#include "header/InputCoordinates.h"
+#include "InputCoordinates.h"
+#include "../checker/CheckmateGameChecker.h"
+#include "../checker/StalemateGameChecker.h"
+#include "../checker/GameState.h"
 
 Game::Game(Board &board) : m_board(board) {
     checkers.push_back(std::make_unique<StalemateGameChecker>());
+    checkers.push_back(std::make_unique<CheckmateGameChecker>());
 }
 
 GameState Game::determineGameState(Board &board, Color color) {
@@ -37,11 +39,8 @@ void Game::loop() {
         }
 
         Move move = InputCoordinates::inputMove(m_board, colorToMove, m_renderer);
-
         m_board.makeMove(move);
-
         colorToMove = getOppositeColor(colorToMove);
-
         state = determineGameState(m_board, colorToMove);
     }
 

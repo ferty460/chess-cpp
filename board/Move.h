@@ -1,6 +1,6 @@
 #ifndef CHESS_MOVE_H
 #define CHESS_MOVE_H
-#include "../header/Coordinates.h"
+#include "../core/Coordinates.h"
 
 
 class Move {

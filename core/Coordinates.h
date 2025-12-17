@@ -1,7 +1,7 @@
 #ifndef CHESS_COORDINATES_H
 #define CHESS_COORDINATES_H
-#include "File.h"
 #include "CoordinatesShift.h"
+#include "File.h"
 
 
 class Coordinates {

@@ -3,7 +3,7 @@
 #include <string>
 
 #include "../board/Board.h"
-#include "../header/Color.h"
+#include "../core/Color.h"
 
 class ConsoleBoardRenderer {
 

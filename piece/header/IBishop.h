@@ -2,7 +2,7 @@
 #define CHESS_IBISHOP_H
 #include <vector>
 
-#include "../../header/CoordinatesShift.h"
+#include "../../core/CoordinatesShift.h"
 
 class IBishop {
 

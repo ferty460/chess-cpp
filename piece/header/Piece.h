@@ -5,9 +5,9 @@
 #include <string>
 #include <vector>
 
-#include "../../header/Color.h"
-#include "../../header/Coordinates.h"
-#include "../../header/CoordinatesShift.h"
+#include "../../core/Color.h"
+#include "../../core/Coordinates.h"
+#include "../../core/CoordinatesShift.h"
 
 
 class Board;

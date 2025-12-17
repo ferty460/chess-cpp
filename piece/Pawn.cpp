@@ -47,7 +47,7 @@ bool Pawn::isSquareAvailableToMove(Coordinates coordinates, Board &board) {
         if (shift == 2) {
             std::vector<Coordinates> between = BoardUtils::getVerticalCoordinatesBetween(m_coordinates, coordinates);
 
-            return board.isSquareEmpty(between[0]);
+            return board.isSquareEmpty(between[0]) && board.isSquareEmpty(coordinates);
         }
 
         return board.isSquareEmpty(coordinates);

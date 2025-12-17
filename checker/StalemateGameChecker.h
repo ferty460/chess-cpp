@@ -1,6 +1,6 @@
 #ifndef CHESS_STALEMATEGAMECHECKER_H
 #define CHESS_STALEMATEGAMECHECKER_H
-#include "header/GameStateChecker.h"
+#include "GameStateChecker.h"
 
 
 class StalemateGameChecker : public GameStateChecker {

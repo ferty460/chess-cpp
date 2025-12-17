@@ -1,11 +1,11 @@
-#include "header/InputCoordinates.h"
+#include "InputCoordinates.h"
 #include <iostream>
 #include <string>
 
-#include "board/BoardFactory.h"
-#include "piece/header/King.h"
-#include "piece/header/Piece.h"
-#include "render/ConsoleBoardRenderer.h"
+#include "../board/BoardFactory.h"
+#include "../piece/header/King.h"
+#include "../piece/header/Piece.h"
+#include "../render/ConsoleBoardRenderer.h"
 
 InputCoordinates::InputCoordinates() = default;
 

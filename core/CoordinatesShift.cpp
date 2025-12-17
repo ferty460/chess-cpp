@@ -1,4 +1,4 @@
-#include "header/CoordinatesShift.h"
+#include "CoordinatesShift.h"
 
 CoordinatesShift::CoordinatesShift(int fileShift, int rankShift)
     : m_fileShift(fileShift), m_rankShift(rankShift) {

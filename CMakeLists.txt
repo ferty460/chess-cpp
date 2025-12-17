@@ -6,10 +6,10 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(chess main.cpp
         piece/Piece.cpp
         piece/header/Piece.h
-        header/Color.h
-        Coordinates.cpp
-        header/Coordinates.h
-        header/File.h
+        core/Color.h
+        core/Coordinates.cpp
+        core/Coordinates.h
+        core/File.h
         board/Board.cpp
         board/Board.h
         piece/Knight.cpp
@@ -26,12 +26,12 @@ add_executable(chess main.cpp
         piece/header/King.h
         render/ConsoleBoardRenderer.cpp
         render/ConsoleBoardRenderer.h
-        CoordinatesShift.cpp
-        header/CoordinatesShift.h
-        Game.cpp
-        header/Game.h
-        InputCoordinates.cpp
-        header/InputCoordinates.h
+        core/CoordinatesShift.cpp
+        core/CoordinatesShift.h
+        core/Game.cpp
+        core/Game.h
+        core/InputCoordinates.cpp
+        core/InputCoordinates.h
         board/BoardFactory.cpp
         board/BoardFactory.h
         piece/PieceFactory.cpp
@@ -46,7 +46,9 @@ add_executable(chess main.cpp
         piece/header/IRook.h
         board/Move.cpp
         board/Move.h
-        header/GameState.h
-        header/GameStateChecker.h
-        StalemateGameChecker.cpp
-        StalemateGameChecker.h)
+        checker/GameState.h
+        checker/GameStateChecker.h
+        checker/StalemateGameChecker.cpp
+        checker/StalemateGameChecker.h
+        checker/CheckmateGameChecker.cpp
+        checker/CheckmateGameChecker.h)

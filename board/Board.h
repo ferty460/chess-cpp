@@ -4,8 +4,8 @@
 #include <memory>
 
 #include "Move.h"
-#include "../header/Color.h"
-#include "../header/Coordinates.h"
+#include "../core/Color.h"
+#include "../core/Coordinates.h"
 
 
 class Piece;
