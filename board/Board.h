@@ -3,6 +3,8 @@
 #include <map>
 #include <memory>
 
+#include "../header/Move.h"
+#include "../header/Color.h"
 #include "../header/Coordinates.h"
 
 
@@ -23,11 +25,13 @@ class Board {
     void setUpKings();
 
 public:
+    std::vector<Piece*> getPiecesByColor(Color color);
     Piece* getPiece(Coordinates &coordinates);
     void setPiece(Coordinates &coordinates, std::unique_ptr<Piece> piece);
     void removePiece(Coordinates &coordinates);
-    void movePiece(Coordinates &from, Coordinates &to);
+    void makeMove(Move move);
     bool isSquareEmpty(Coordinates &coordinates);
+    bool isSquareAttackedByColor(Coordinates &coordinates, Color color);
     static bool isSquareDark(Coordinates &coordinates);
     void setUpDefaultPiecesPositions();
 

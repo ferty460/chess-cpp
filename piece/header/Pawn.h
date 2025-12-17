@@ -11,6 +11,7 @@ public:
     std::string getUnicodeSprite() override;
     std::vector<CoordinatesShift> getMoves() override;
     bool isSquareAvailableToMove(Coordinates coordinates, Board &board) override;
+    std::vector<CoordinatesShift> getAttacks() override;
 
 };
 

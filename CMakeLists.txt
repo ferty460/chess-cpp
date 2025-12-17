@@ -43,4 +43,6 @@ add_executable(chess main.cpp
         piece/header/IBishop.h
         piece/IBishop.cpp
         piece/Irook.cpp
-        piece/header/IRook.h)
+        piece/header/IRook.h
+        Move.cpp
+        header/Move.h)

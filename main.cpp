@@ -22,7 +22,8 @@ int main() {
 
     Board board = BoardFactory().fromFen(
      // "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
-        "4k3/6p1/5p2/4N3/2n1B1b1/3P2P1/2P5/4K3 b KQkq - 0 1"
+        // "4k3/6p1/5p2/4N3/2n1B1b1/3P2P1/2P5/4K3 b KQkq - 0 1"
+        "k7/8/4p3/8/4K3/8/8/8 w KQkq - 0 1"
     );
 
     // ConsoleBoardRenderer renderer = ConsoleBoardRenderer();

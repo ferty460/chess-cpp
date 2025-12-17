@@ -3,6 +3,7 @@
 #include <string>
 
 #include "piece/header/Piece.h"
+#include "render/ConsoleBoardRenderer.h"
 
 InputCoordinates::InputCoordinates() = default;
 
@@ -68,4 +69,16 @@ Coordinates InputCoordinates::inputAvailableSquare(std::set<Coordinates> availab
 
         return coord;
     }
+}
+
+Move InputCoordinates::inputMove(Board &board, Color color, ConsoleBoardRenderer renderer) {
+    Coordinates from = inputPieceCoordsForColor(color, board);
+
+    Piece *piece = board.getPiece(from);
+    std::set<Coordinates> availableSquares = piece->getAvailableCoordsToMove(board);
+
+    renderer.render(board);
+    Coordinates to = inputAvailableSquare(availableSquares);
+
+    return {from, to};
 }

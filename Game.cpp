@@ -3,7 +3,6 @@
 #include <iostream>
 
 #include "header/InputCoordinates.h"
-#include "piece/header/Piece.h"
 
 Game::Game(Board &board) : m_board(board) {
 }
@@ -21,14 +20,9 @@ void Game::loop() {
         }
 
         Color color = isWhiteToMove ? Color::WHITE : Color::BLACK;
-        Coordinates from = InputCoordinates::inputPieceCoordsForColor(color, m_board);
+        Move move = InputCoordinates::inputMove(m_board, color, m_renderer);
 
-        Piece *piece = m_board.getPiece(from);
-        std::set<Coordinates> availableSquares = piece->getAvailableCoordsToMove(m_board);
-
-        Coordinates to = InputCoordinates::inputAvailableSquare(availableSquares);
-
-        m_board.movePiece(from, to);
+        m_board.makeMove(move);
 
         isWhiteToMove = !isWhiteToMove;
     }

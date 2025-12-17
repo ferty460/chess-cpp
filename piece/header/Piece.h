@@ -23,7 +23,10 @@ public:
 
     virtual std::string getUnicodeSprite() = 0;
     virtual std::vector<CoordinatesShift> getMoves() = 0;
+    virtual std::vector<CoordinatesShift> getAttacks();
+    virtual std::set<Coordinates> getAttackedSquares(Board &board);
     virtual bool isSquareAvailableToMove(Coordinates coordinates, Board &board);
+    virtual bool isSquareAvailableToAttack(Coordinates coordinates, Board &board);
 
     std::set<Coordinates> getAvailableCoordsToMove(Board &board);
 

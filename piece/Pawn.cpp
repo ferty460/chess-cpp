@@ -45,3 +45,17 @@ bool Pawn::isSquareAvailableToMove(Coordinates coordinates, Board &board) {
 
     return board.getPiece(coordinates)->getColor() != m_color;
 }
+
+std::vector<CoordinatesShift> Pawn::getAttacks() {
+    std::vector<CoordinatesShift> result;
+
+    if (m_color == Color::WHITE) {
+        result.push_back(CoordinatesShift(-1, 1));
+        result.push_back(CoordinatesShift(1, 1));
+    } else {
+        result.push_back(CoordinatesShift(-1, -1));
+        result.push_back(CoordinatesShift(1, -1));
+    }
+
+    return result;
+}

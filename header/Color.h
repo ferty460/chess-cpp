@@ -8,5 +8,8 @@ enum class Color {
 
 };
 
+inline Color getOppositeColor(Color color) {
+    return color == Color::WHITE ? Color::BLACK : Color::WHITE;
+}
 
 #endif //CHESS_COLOR_H

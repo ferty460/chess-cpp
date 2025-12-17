@@ -8,6 +8,7 @@ class LongRangePiece : public Piece {
 public:
     LongRangePiece(Color color, Coordinates coord);
     bool isSquareAvailableToMove(Coordinates coord, Board &board) override;
+    bool isSquareAvailableToAttack(Coordinates coordinates, Board &board) override;
 
 };
 

@@ -22,8 +22,8 @@ void Board::removePiece(Coordinates &coordinates) {
     pieces.erase(coordinates);
 }
 
-void Board::movePiece(Coordinates &from, Coordinates &to) {
-    auto it = pieces.find(from);
+void Board::makeMove(Move move) {
+    auto it = pieces.find(move.getFrom());
     if (it == pieces.end()) {
         return;
     }
@@ -31,12 +31,26 @@ void Board::movePiece(Coordinates &from, Coordinates &to) {
     std::unique_ptr<Piece> piece = std::move(it->second);
 
     pieces.erase(it);
-    piece->setCoordinates(to);
-    pieces.insert_or_assign(to, std::move(piece));
+    piece->setCoordinates(move.getTo());
+    pieces.insert_or_assign(move.getTo(), std::move(piece));
 }
 
 bool Board::isSquareEmpty(Coordinates &coordinates) {
     return !pieces.contains(coordinates);
+}
+
+bool Board::isSquareAttackedByColor(Coordinates &coordinates, Color color) {
+    std::vector<Piece*> pieces = getPiecesByColor(color);
+
+    for (Piece* piece : pieces) {
+        std::set<Coordinates> attackedSquares = piece->getAttackedSquares(*this);
+
+        if (attackedSquares.contains(coordinates)) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 bool Board::isSquareDark(Coordinates &coordinates) {
@@ -106,6 +120,18 @@ void Board::setUpKings() {
 
     setPiece(coord1, std::make_unique<King>(Color::WHITE, coord1));
     setPiece(coord2, std::make_unique<King>(Color::BLACK, coord2));
+}
+
+std::vector<Piece*> Board::getPiecesByColor(Color color) {
+    std::vector<Piece*> result;
+
+    for (auto& [coords, piecePtr] : pieces) {
+        if (piecePtr->getColor() == color) {
+            result.push_back(piecePtr.get());
+        }
+    }
+
+    return result;
 }
 
 void Board::setUpDefaultPiecesPositions() {
