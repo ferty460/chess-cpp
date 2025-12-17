@@ -2,28 +2,49 @@
 
 #include <iostream>
 
+#include "StalemateGameChecker.h"
+#include "header/GameState.h"
 #include "header/InputCoordinates.h"
 
 Game::Game(Board &board) : m_board(board) {
+    checkers.push_back(std::make_unique<StalemateGameChecker>());
+}
+
+GameState Game::determineGameState(Board &board, Color color) {
+    for (auto &checker : checkers) {
+        GameState state = checker->check(board, color);
+
+        if (state != GameState::ONGOING) {
+            return state;
+        }
+    }
+
+    return GameState::ONGOING;
 }
 
 void Game::loop() {
-    bool isWhiteToMove = true;
+    Color colorToMove = Color::WHITE;
 
-    while (true) {
+    GameState state = determineGameState(m_board, colorToMove);
+
+    while (state == GameState::ONGOING) {
         m_renderer.render(m_board);
 
-        if (isWhiteToMove) {
+        if (colorToMove == Color::WHITE) {
             std::cout << "ХОД БЕЛЫХ" << std::endl;
         } else {
             std::cout << "ХОД ЧЕРНЫХ" << std::endl;
         }
 
-        Color color = isWhiteToMove ? Color::WHITE : Color::BLACK;
-        Move move = InputCoordinates::inputMove(m_board, color, m_renderer);
+        Move move = InputCoordinates::inputMove(m_board, colorToMove, m_renderer);
 
         m_board.makeMove(move);
 
-        isWhiteToMove = !isWhiteToMove;
+        colorToMove = getOppositeColor(colorToMove);
+
+        state = determineGameState(m_board, colorToMove);
     }
+
+    m_renderer.render(m_board);
+    std::cout << "Игра закончена: " << gameStateToString(state) << std::endl;
 }

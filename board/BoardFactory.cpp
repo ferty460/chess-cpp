@@ -46,13 +46,3 @@ Board BoardFactory::fromFen(std::string fen) {
 
     return board;
 }
-
-Board BoardFactory::copy(Board source) {
-    Board clone = fromFen(source.getStartingFen());
-
-    for (Move move : source.getMoves()) {
-        clone.makeMove(move);
-    }
-
-    return clone;
-}

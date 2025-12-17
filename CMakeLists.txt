@@ -45,4 +45,8 @@ add_executable(chess main.cpp
         piece/Irook.cpp
         piece/header/IRook.h
         board/Move.cpp
-        board/Move.h)
+        board/Move.h
+        header/GameState.h
+        header/GameStateChecker.h
+        StalemateGameChecker.cpp
+        StalemateGameChecker.h)

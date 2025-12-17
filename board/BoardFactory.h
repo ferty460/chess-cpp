@@ -12,7 +12,6 @@ class BoardFactory {
 
 public:
     Board fromFen(std::string fen);
-    Board copy(Board source);
 
 };
 
