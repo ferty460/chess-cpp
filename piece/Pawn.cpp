@@ -1,6 +1,7 @@
 #include "header/Pawn.h"
 
 #include "../board/Board.h"
+#include "../utils/BoardUtils.h"
 
 Pawn::Pawn(Color color, Coordinates coord) : Piece(color, coord) {}
 
@@ -41,6 +42,14 @@ std::vector<CoordinatesShift> Pawn::getMoves() {
 
 bool Pawn::isSquareAvailableToMove(Coordinates coordinates, Board &board) {
     if (m_coordinates.getFile() == coordinates.getFile()) {
+        int shift = abs(m_coordinates.getRank() - coordinates.getRank());
+
+        if (shift == 2) {
+            std::vector<Coordinates> between = BoardUtils::getVerticalCoordinatesBetween(m_coordinates, coordinates);
+
+            return board.isSquareEmpty(between[0]);
+        }
+
         return board.isSquareEmpty(coordinates);
     }
 
