@@ -5,6 +5,11 @@
 
 Rook::Rook(Color color, Coordinates coord) : LongRangePiece(color, coord) {}
 
+std::unique_ptr<Piece> Rook::clone() const {
+    return std::make_unique<Rook>(*this);
+}
+
+
 std::string Rook::getUnicodeSprite() {
     return "♜";
 }

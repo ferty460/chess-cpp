@@ -4,6 +4,11 @@
 
 Pawn::Pawn(Color color, Coordinates coord) : Piece(color, coord) {}
 
+std::unique_ptr<Piece> Pawn::clone() const {
+    return std::make_unique<Pawn>(*this);
+}
+
+
 std::string Pawn::getUnicodeSprite() {
     return "♟︎";
 }

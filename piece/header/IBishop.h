@@ -7,6 +7,7 @@
 class IBishop {
 
 public:
+    virtual ~IBishop() = default;
     virtual std::vector<CoordinatesShift> getBishopMoves();
 
 };

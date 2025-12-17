@@ -1,4 +1,4 @@
-#include "header/Move.h"
+#include "Move.h"
 
 Move::Move(Coordinates from, Coordinates to) : m_from(from), m_to(to) {
 }

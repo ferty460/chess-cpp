@@ -2,6 +2,11 @@
 
 Queen::Queen(Color color, Coordinates coord) : LongRangePiece(color, coord) {}
 
+std::unique_ptr<Piece> Queen::clone() const {
+    return std::make_unique<Queen>(*this);
+}
+
+
 std::string Queen::getUnicodeSprite() {
     return "♛";
 }

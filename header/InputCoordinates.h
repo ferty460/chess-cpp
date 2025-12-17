@@ -6,7 +6,7 @@
 #include "../board/Board.h"
 #include "Color.h"
 #include "Coordinates.h"
-#include "Move.h"
+#include "../board/Move.h"
 #include "../render/ConsoleBoardRenderer.h"
 
 
@@ -17,6 +17,9 @@ public:
     static Coordinates input();
     static Coordinates inputPieceCoordsForColor(Color color, Board &board);
     static Coordinates inputAvailableSquare(std::set<Coordinates> availableSquares);
+
+    static bool validateIfKingInCheckAfterMove(Board &board, Color color, Move move);
+
     static Move inputMove(Board &board, Color color, ConsoleBoardRenderer renderer);
 
 };

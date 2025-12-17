@@ -1,5 +1,6 @@
 #ifndef CHESS_PIECE_H
 #define CHESS_PIECE_H
+#include <memory>
 #include <set>
 #include <string>
 #include <vector>
@@ -20,6 +21,7 @@ protected:
 public:
     virtual ~Piece() = default;
     Piece(Color color, Coordinates coordinates);
+    virtual std::unique_ptr<Piece> clone() const = 0;
 
     virtual std::string getUnicodeSprite() = 0;
     virtual std::vector<CoordinatesShift> getMoves() = 0;

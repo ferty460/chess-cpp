@@ -8,6 +8,7 @@
 class IRook {
 
 public:
+    virtual ~IRook() = default;
     virtual std::vector<CoordinatesShift> getRookMoves();
 
 };

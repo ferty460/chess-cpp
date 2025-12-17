@@ -8,6 +8,8 @@ class Knight : public Piece {
 
 public:
     Knight(Color color, Coordinates coord);
+    std::unique_ptr<Piece> clone() const override;
+
     std::string getUnicodeSprite() override;
     std::vector<CoordinatesShift> getMoves() override;
 

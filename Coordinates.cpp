@@ -24,11 +24,11 @@ bool Coordinates::isValidToShift(CoordinatesShift shift) {
     return true;
 }
 
-File Coordinates::getFile() {
+File Coordinates::getFile() const {
     return file;
 }
 
-int Coordinates::getRank() {
+int Coordinates::getRank() const {
     return rank;
 }
 

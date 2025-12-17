@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+#include "board/BoardFactory.h"
+#include "piece/header/King.h"
 #include "piece/header/Piece.h"
 #include "render/ConsoleBoardRenderer.h"
 
@@ -71,14 +73,43 @@ Coordinates InputCoordinates::inputAvailableSquare(std::set<Coordinates> availab
     }
 }
 
+bool InputCoordinates::validateIfKingInCheckAfterMove(Board &board, Color color, Move move) {
+    Board copy = Board(board);
+    copy.makeMove(move);
+
+    King* king = nullptr;
+
+    for (Piece* piece : copy.getPiecesByColor(color)) {
+        if (auto* k = dynamic_cast<King*>(piece)) {
+            king = k;
+            break;
+        }
+    }
+
+    if (!king) {
+        throw std::logic_error("King not found on board");
+    }
+
+    return copy.isSquareAttackedByColor(king->getCoordinates(), getOppositeColor(color));
+}
+
 Move InputCoordinates::inputMove(Board &board, Color color, ConsoleBoardRenderer renderer) {
-    Coordinates from = inputPieceCoordsForColor(color, board);
+    while (true) {
+        Coordinates from = inputPieceCoordsForColor(color, board);
 
-    Piece *piece = board.getPiece(from);
-    std::set<Coordinates> availableSquares = piece->getAvailableCoordsToMove(board);
+        Piece *piece = board.getPiece(from);
+        std::set<Coordinates> availableSquares = piece->getAvailableCoordsToMove(board);
 
-    renderer.render(board);
-    Coordinates to = inputAvailableSquare(availableSquares);
+        renderer.render(board);
+        Coordinates to = inputAvailableSquare(availableSquares);
 
-    return {from, to};
+        Move move = Move(from, to);
+
+        if (validateIfKingInCheckAfterMove(board, color, move)) {
+            std::cout << "Король находится под ударом!" << std::endl;
+            continue;
+        }
+
+        return move;
+    }
 }

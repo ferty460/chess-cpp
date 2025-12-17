@@ -4,6 +4,11 @@
 
 King::King(Color color, Coordinates coord) : Piece(color, coord) {}
 
+std::unique_ptr<Piece> King::clone() const {
+    return std::make_unique<King>(*this);
+}
+
+
 std::string King::getUnicodeSprite() {
     return "♚";
 }

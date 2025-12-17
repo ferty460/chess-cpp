@@ -1,4 +1,6 @@
 #include "Board.h"
+
+#include <utility>
 #include "../header/File.h"
 #include "../piece/header/Piece.h"
 #include "../piece/header/Bishop.h"
@@ -8,9 +10,26 @@
 #include "../piece/header/Queen.h"
 #include "../piece/header/Rook.h"
 
+Board::Board(std::string startingFen) : startingFen(std::move(startingFen)) {
+}
+
+Board::Board(const Board& other) {
+    for (const auto& [coords, piece] : other.pieces) {
+        pieces.emplace(coords, piece->clone());
+    }
+}
+
 Piece* Board::getPiece(Coordinates &coordinates) {
     auto it = pieces.find(coordinates);
     return it != pieces.end() ? it->second.get() : nullptr;
+}
+
+std::string Board::getStartingFen() {
+    return startingFen;
+}
+
+std::vector<Move> Board::getMoves() {
+    return moves;
 }
 
 void Board::setPiece(Coordinates &coordinates, std::unique_ptr<Piece> piece) {
@@ -33,6 +52,8 @@ void Board::makeMove(Move move) {
     pieces.erase(it);
     piece->setCoordinates(move.getTo());
     pieces.insert_or_assign(move.getTo(), std::move(piece));
+
+    moves.push_back(move);
 }
 
 bool Board::isSquareEmpty(Coordinates &coordinates) {

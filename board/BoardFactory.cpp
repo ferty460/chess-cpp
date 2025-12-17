@@ -20,7 +20,7 @@ std::vector<std::string> BoardFactory::split(std::string &str, char delim) {
 Board BoardFactory::fromFen(std::string fen) {
     // default setup:
     // rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
-    Board board = Board();
+    Board board = Board(fen);
 
     std::vector<std::string> parts = split(fen, ' ');
     std::string piecePositions = parts[0];
@@ -45,4 +45,14 @@ Board BoardFactory::fromFen(std::string fen) {
     }
 
     return board;
+}
+
+Board BoardFactory::copy(Board source) {
+    Board clone = fromFen(source.getStartingFen());
+
+    for (Move move : source.getMoves()) {
+        clone.makeMove(move);
+    }
+
+    return clone;
 }
